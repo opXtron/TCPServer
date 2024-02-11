@@ -3,7 +3,7 @@
 # Check if ENABLE_LOGGING is set
 if [ -z "$ENABLE_LOGGING" ]
 then
-    ENABLE_LOGGING=0
+    ENABLE_LOGGING=1
 fi
 
 # Check if port is set
@@ -21,7 +21,7 @@ fi
 # Check if NUM_CLIENTS is set
 if [ -z "$NUM_CLIENTS" ]
 then
-    NUM_CLIENTS=5
+    NUM_CLIENTS=200
 fi
 
 START=$(($(date +%s%N)/1000000))
