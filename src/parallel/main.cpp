@@ -12,7 +12,7 @@
 using namespace std;
 
 #define BUFFER_SIZE 1024
-#define THREAD_POOL_SIZE 20
+#define THREAD_POOL_SIZE 50
 
 pthread_t threads[THREAD_POOL_SIZE];
 
