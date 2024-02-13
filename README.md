@@ -1,3 +1,7 @@
+#Details: Name and SRN
+- ***Name***: Gowtham S
+- ***SRN***: PES1UG21CS210
+
 # Multithreaded TCP Server 
 
 HP Assignement: PThreads
