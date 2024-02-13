@@ -12,7 +12,7 @@
 using namespace std;
 
 #define BUFFER_SIZE 1024
-#define THREAD_POOL_SIZE 50
+#define THREAD_POOL_SIZE 60
 
 pthread_t threads[THREAD_POOL_SIZE];
 
@@ -157,6 +157,12 @@ int main(int argc, char **argv) {
     serveraddr.sin_addr.s_addr = INADDR_ANY;
     serveraddr.sin_port = htons(portno);
 
+    int reuse = 1;
+    if (setsockopt(parentfd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) == -1) {
+        perror("Setsockopt failed");
+        close(parentfd);
+        exit(EXIT_FAILURE);
+    }
 
     if (bind(parentfd, (struct sockaddr *)&serveraddr, sizeof(serveraddr)) < 0) {
         perror("ERROR on binding");
